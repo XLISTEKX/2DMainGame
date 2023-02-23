@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba65b326a9e57e24abe072337c2fc1c7, type: 3}
+  m_Name: Item_Banana 1
+  m_EditorClassIdentifier: 
+  slotQuantity: 0
+  amount: 0
+  ID: 1
+  price: 0
+  itemName: Bannana
+  description: 
+  itemIcon: {fileID: 21300000, guid: 5c890d8a6a6a14040911dd73525ebc66, type: 3}
+  worldItem: {fileID: 0}

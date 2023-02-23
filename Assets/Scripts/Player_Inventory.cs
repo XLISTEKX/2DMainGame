@@ -5,6 +5,7 @@ using UnityEngine;
 public class Player_Inventory : Inventory_Prefab
 {
     public List<GameObject> itemFrameSlots;
+    public Item_Prefab itemEquiped;
 
 
     private void Start()

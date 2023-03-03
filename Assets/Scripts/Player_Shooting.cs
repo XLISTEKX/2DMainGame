@@ -8,12 +8,16 @@ public class Player_Shooting : MonoBehaviour
 {
     public Joystick rightJoystick;
     public GameObject crosshair;
-    public GameObject projectile;
-    public float offset;
+    public float offsetCrosshair;
 
-    public float bulletsSpeed;
-    public float shootCooldown;
     Vector3 crossPosition;
+    public Weapon_Prefab currentWeapon;
+
+
+    private void Start()
+    {
+        currentWeapon = GetComponent<Player_Inventory>().itemEquiped.worldItem.GetComponent<Weapon_Prefab>();
+    }
 
     private void FixedUpdate()
     {
@@ -23,25 +27,24 @@ public class Player_Shooting : MonoBehaviour
             crosshair.SetActive(true);
             
             crossPosition = new Vector3(rightJoystick.Horizontal, rightJoystick.Vertical).normalized;
-            crosshair.transform.position = transform.position + crossPosition * offset;
-
-            if (!IsInvoking("shoot"))
+            crosshair.transform.position = transform.position + crossPosition * offsetCrosshair;
+            if (!IsInvoking("useWeapon"))
             {
-                InvokeRepeating("shoot", shootCooldown, shootCooldown);
+                InvokeRepeating("useWeapon", currentWeapon.reloadTime, currentWeapon.reloadTime);
             }
+            
         }
         else
         {
             crosshair.SetActive(false);
-            CancelInvoke("shoot");
+            CancelInvoke("useWeapon");
         }
         
     }
 
-    public void shoot()
+    public void useWeapon()
     {
-        Rigidbody2D temp = Instantiate(projectile, crosshair.transform.position, projectile.transform.rotation).GetComponent<Rigidbody2D>();
-        temp.velocity = crossPosition * bulletsSpeed;
-
+        currentWeapon.useWeapon(crossPosition, crosshair.transform.position);
     }
+
 }

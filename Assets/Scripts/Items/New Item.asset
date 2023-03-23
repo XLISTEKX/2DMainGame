@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ba65b326a9e57e24abe072337c2fc1c7, type: 3}
-  m_Name: Item_Sword
+  m_Name: New Item
   m_EditorClassIdentifier: 
+  itemName: 
+  ID: 0
   slotQuantity: 0
-  amount: 0
-  ID: 2
-  price: 0
-  itemName: Bannana
   description: 
-  itemIcon: {fileID: 21300000, guid: 4fbc4ca6fd5783245805cc690f4e6076, type: 3}
-  worldItem: {fileID: 0}
+  itemIcon: {fileID: 0}
+  itemType: 1
+  priceDefault: 0
+  worldObject: {fileID: 0}

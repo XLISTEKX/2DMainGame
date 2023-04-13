@@ -9,7 +9,8 @@ public class Item_SO : ScriptableObject
     [Header("Main")]
     public string itemName;
     public int ID;
-    public int slotQuantity;
+    public int slotMaxQuantity;
+    public bool canStack;
     public string description;
     public Sprite itemIcon;
     public Item.ItemType itemType;
@@ -19,7 +20,6 @@ public class Item_SO : ScriptableObject
 
     [Header("World")]
     public GameObject worldObject;
-
 
 
 }

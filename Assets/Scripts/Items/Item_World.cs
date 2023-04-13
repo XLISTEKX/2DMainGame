@@ -2,17 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Item_World : MonoBehaviour
+public class Item_World : MonoBehaviour, IInteractable
 {
-    // Start is called before the first frame update
-    void Start()
+    Inventory_Player inventory;
+
+    private void Start()
     {
-        
+        inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory_Player>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Interact()
     {
-        
+        Item item = GetComponent<Item>();
+
+        inventory.addItem(item.itemInfo.worldObject.GetComponent<Item>(), item.itemQuantity);
+        Destroy(gameObject);
     }
 }

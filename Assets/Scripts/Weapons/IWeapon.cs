@@ -1,8 +1,11 @@
 
+using UnityEngine;
+
 public interface IWeapon 
 {
-    void useWeapon()
-    {
-
-    }
+    public void useWeapon();
+}
+public interface IWeaponRange : IWeapon
+{
+    public void initWeapon(Transform spawnTransform);
 }

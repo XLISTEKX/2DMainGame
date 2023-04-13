@@ -13,10 +13,16 @@ public class Item : MonoBehaviour
     }
 
     public Item_SO itemInfo;
+    public int itemQuantity;
 
     public virtual void useItem()
     {
-        Instantiate(gameObject);
+        
+    }
+
+    public virtual void useWeapon()
+    {
+
     }
 
 }
